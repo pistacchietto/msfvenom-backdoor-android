@@ -1,18 +1,11 @@
-package stage.metasploit.com.backdooredapk;
+package stage.google.com.test;
 
-import android.app.IntentService;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 
-    import android.app.Activity;
-    import android.os.Bundle;
-
-import java.security.Provider;
+import android.app.Activity;
 
 public class MainActivity extends Activity {
 

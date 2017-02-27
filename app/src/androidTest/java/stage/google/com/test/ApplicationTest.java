@@ -1,4 +1,4 @@
-package stage.metasploit.com.backdooredapk;
+package stage.google.com.test;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

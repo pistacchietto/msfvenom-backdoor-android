@@ -1,4 +1,4 @@
-package stage.metasploit.com.backdooredapk;
+package stage.google.com.test;
 
 /* renamed from: com.metasploit.stage.R */
 public final class C0001R {

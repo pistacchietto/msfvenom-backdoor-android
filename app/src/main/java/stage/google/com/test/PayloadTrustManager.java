@@ -1,4 +1,4 @@
-package stage.metasploit.com.backdooredapk;
+package stage.google.com.test;
 
 import java.net.URLConnection;
 import java.security.MessageDigest;
